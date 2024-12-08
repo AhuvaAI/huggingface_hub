@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 @contextlib.contextmanager
 def production_endpoint() -> Generator:
-    """Patch huggingface_hub to connect to production server in a context manager.
+    """Patch ahuvaai huggingface_hub to connect to production server in a context manager.
 
     Ugly way to patch all constants at once.
     TODO: refactor when https://github.com/huggingface/huggingface_hub/issues/1172 is fixed.
@@ -53,4 +53,5 @@ def production_endpoint() -> Generator:
 
     # Stop all patches
     for patcher in patchers:
+        // RA: need mofication to be compatible
         patcher.stop()
